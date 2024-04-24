@@ -1,0 +1,136 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+#game-title {
+  margin-bottom: 20px;
+  color: #6a0dad; /* Purple color for the title */
+  font-size: 2em; /* Larger font size for the title */
+}
+
+#game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#player-turn-container {
+  margin-bottom: 20px;
+}
+
+#game-container {
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #f0f0f0, #fff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 48px;
+  border: 2px solid #6a0dad; /* Purple border */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for cell background */
+}
+
+th:hover,
+td:hover {
+  background-color: #d3b8ff; /* Light purple on hover */
+}
+
+#scores {
+  text-align: center;
+  color: #6a0dad; /* Purple color for scores */
+}
+
+#scores h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em; /* Larger font size for scores */
+}
+
+#scores p {
+  margin: 0;
+}
+
+/* Animation */
+@keyframes cellClickedAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cell-clicked {
+  animation: cellClickedAnimation 0.3s ease;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.result-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease forwards;
+  display: none;
+}
+
+.result-message.show {
+  display: block;
+}
+
+.result-message button {
+  background-color: #6a0dad; /* Purple background color for button */
+  color: #fff; /* White text color for button */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.result-message button:hover {
+  background-color: #542b84; /* Darker purple background color on hover */
+}
+
+/* Player turn colors */
+.player-s {
+  color: #ff4081; /* Pink color for Shivam's turn */
+}
+
+.player-a {
+  color: #536dfe; /* Blue color for Amisha's turn */
+}
